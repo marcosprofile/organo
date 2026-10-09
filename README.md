@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Organo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicação desenvolvida com React para cadastrar colaboradores e organizá-los por times, exibindo suas informações em cards.
 
-## Available Scripts
+Projeto realizado durante o curso **React: desenvolvendo com JavaScript**, da Alura, como revisão dos fundamentos da biblioteca antes de avançar para integração com APIs.
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+- Cadastro de colaboradores por formulário.
+- Associação de cada colaborador a um time.
+- Exibição dos colaboradores em cards.
+- Organização dos cards por time.
+- Exibição apenas dos times que possuem colaboradores.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- React
+- JavaScript
+- HTML e JSX
+- CSS
 
-### `npm test`
+## O que aprendi
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Desenvolvimento declarativo
 
-### `npm run build`
+Compreendi como descrever a interface com base nos dados da aplicação. Em vez de alterar elementos do DOM manualmente, atualizo o estado e o React renderiza a interface correspondente.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Componentização
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Pratiquei a divisão da interface em componentes reutilizáveis, como banner, campos de formulário, botão, times e cards de colaboradores.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Essa organização facilita a manutenção e reduz a repetição de código.
 
-### `npm run eject`
+### JSX
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Utilizei JSX para estruturar a interface dentro dos componentes, combinando marcação com expressões JavaScript.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Props
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Utilizei props para passar informações e funções entre componentes, permitindo personalizar seu conteúdo e comportamento.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Também pratiquei a comunicação de eventos do componente filho para o pai por meio de funções recebidas como props.
 
-## Learn More
+### Eventos e interação
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Trabalhei com eventos de alteração de campos e envio do formulário, conectando as ações do usuário à lógica da aplicação.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Estado com useState
 
-### Code Splitting
+Utilizei o hook `useState` para armazenar informações que mudam durante o uso da aplicação, como os valores dos campos e os colaboradores cadastrados.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Aprendi que atualizar o estado permite refletir essas mudanças na interface.
 
-### Analyzing the Bundle Size
+### Formulários controlados
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pratiquei o controle dos campos de formulário pelo estado do React:
 
-### Making a Progressive Web App
+- O atributo `value` representa o valor atual.
+- O evento `onChange` atualiza esse valor.
+- O envio do formulário utiliza os dados armazenados no estado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Arrays e renderização de listas
 
-### Advanced Configuration
+Utilizei métodos de arrays para organizar e apresentar os dados:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `map()` para transformar colaboradores em elementos da interface.
+- `filter()` para selecionar os colaboradores de cada time.
+- Spread (`...`) para criar um novo array ao adicionar um colaborador, preservando os dados anteriores.
 
-### Deployment
+### Elevação de estado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Pratiquei a centralização do estado em um componente pai quando diferentes componentes precisam trabalhar com os mesmos dados.
 
-### `npm run build` fails to minify
+O formulário informa o novo cadastro ao componente responsável pelo estado, que disponibiliza os colaboradores para a renderização dos times.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Renderização condicional
+
+Utilizei condições para controlar quais elementos aparecem na tela, como exibir um time apenas quando ele possui colaboradores.
+
+### Refatoração e organização
+
+Pratiquei a identificação de código repetido e a criação de componentes para organizar melhor a aplicação.
+
+### Depuração e publicação
+
+Trabalhei com investigação de erros e correção de problemas durante o desenvolvimento, além de conhecer o fluxo de publicação da aplicação.
+
+## Fluxo da aplicação
+
+1. O usuário preenche os dados do colaborador.
+2. Seleciona o time ao qual ele pertence.
+3. Envia o formulário.
+4. O novo colaborador é adicionado ao estado da aplicação.
+5. O React atualiza a interface e exibe o card no time correspondente.
+
+## Escopo
+
+Esta versão trabalha com dados no estado da aplicação, sem integração com API ou banco de dados.
+
+Os cadastros realizados durante o uso não são persistidos após recarregar a página.
+
+## Créditos
+
+Projeto desenvolvido como parte do curso **React: desenvolvendo com JavaScript**, da Alura.
