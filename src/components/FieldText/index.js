@@ -9,7 +9,7 @@ export const FieldText = (props) => {
     <div className="field-text">
       <label htmlFor={props.id} >{props.label}</label>
       <input
-        value={props.result}
+        value={props.valor}
         onChange={valor}
         placeholder={props.placeholder}
         id={props.id}

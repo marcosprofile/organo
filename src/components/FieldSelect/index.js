@@ -8,8 +8,9 @@ export const FieldSelect = (props) => {
         onChange={e => props.alterarValor(e.target.value)}
         id={props.id}
         required={props.required}
-        value={props.result}
+        value={props.valor}
       >
+        <option>Selecione ...</option>
         {props.itens.map(item => {
           return <option key={item}>{item}</option>
         })}

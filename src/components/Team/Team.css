@@ -1,0 +1,29 @@
+.team {
+  background-color: var(--cor-fundo);
+  padding: 2.25rem;
+
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      transform: translateX(-50%);
+      width: 2rem;
+      height: .25rem;
+      background-color: var(--cor-after);
+    }
+  }
+
+  .team__container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+  }
+}
