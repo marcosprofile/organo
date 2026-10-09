@@ -1,0 +1,30 @@
+.field-select {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+
+  label {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #212121;
+  }
+
+  select {
+    background-color: #FFFFFF;
+    color: #212121;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    width: 100%;
+    border-radius: .5rem;
+
+    &::placeholder {
+      color: #A4A4A4;
+    }
+
+    &:focus {
+      outline-color: #6278F7;
+    }
+  }
+}
